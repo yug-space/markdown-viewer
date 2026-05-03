@@ -1,0 +1,111 @@
+{
+  "name": "markdown-viewer",
+  "version": "1.0.0",
+  "description": "A clean, minimal markdown viewer with a black & white theme",
+  "author": {
+    "name": "Yug Gupta",
+    "email": "yuggupta.work@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/yug-space/markdown-viewer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yug-space/markdown-viewer.git"
+  },
+  "main": "main.js",
+  "scripts": {
+    "bundle": "esbuild renderer/renderer.js --bundle --outfile=renderer/bundle.js --platform=browser --format=iife",
+    "start": "npm run bundle && electron .",
+    "build": "npm run bundle && electron-builder",
+    "build:mac": "npm run bundle && electron-builder --mac",
+    "build:win": "npm run bundle && electron-builder --win",
+    "build:linux": "npm run bundle && electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.markdownviewer.app",
+    "productName": "Markdown Viewer",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["arm64", "x64"]
+        }
+      ],
+      "icon": "assets/icon.icns",
+      "identity": null,
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
+      "fileAssociations": [
+        {
+          "ext": "md",
+          "name": "Markdown Document",
+          "role": "Viewer",
+          "icon": "assets/icon.icns"
+        },
+        {
+          "ext": "markdown",
+          "name": "Markdown Document",
+          "role": "Viewer",
+          "icon": "assets/icon.icns"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.png",
+      "fileAssociations": [
+        {
+          "ext": "md",
+          "name": "Markdown Document",
+          "role": "Viewer",
+          "icon": "assets/icon.ico"
+        },
+        {
+          "ext": "markdown",
+          "name": "Markdown Document",
+          "role": "Viewer",
+          "icon": "assets/icon.ico"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icon.png",
+      "fileAssociations": [
+        {
+          "ext": "md",
+          "name": "Markdown Document",
+          "role": "Viewer"
+        },
+        {
+          "ext": "markdown",
+          "name": "Markdown Document",
+          "role": "Viewer"
+        }
+      ]
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "assets/**/*"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0",
+    "esbuild": "^0.28.0",
+    "sharp": "^0.34.5"
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0",
+    "highlight.js": "^11.10.0",
+    "markdown-it": "^14.0.0"
+  }
+}

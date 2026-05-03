@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+out/
+build/
+.next/
+*.dmg
+*.exe
+*.AppImage
+*.deb
+*.zip
+
+# Bundled files
+app/renderer/bundle.js
+
+# Macros / Generated
+app/assets/icon.iconset/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env / Secrets
+.env
+.env.local
+.env*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Vercel
+.vercel
