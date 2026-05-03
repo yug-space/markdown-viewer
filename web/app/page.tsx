@@ -17,7 +17,7 @@ export default function Home() {
         </p>
 
         <div className={styles.actions}>
-          <a href="/downloads/Markdown-Viewer-1.0.0-arm64.dmg" className={styles.btnPrimary}>
+          <a href="https://github.com/yug-space/markdown-viewer/releases/download/v1.0.0/Markdown-Viewer-1.0.0-arm64.dmg" className={styles.btnPrimary}>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
               <path d="M14.5 9.6c0-2 1.6-2.9 1.7-3-0.9-1.4-2.4-1.5-2.9-1.6-1.2-0.1-2.4 0.7-3 0.7-0.6 0-1.6-0.7-2.6-0.7-1.4 0-2.6 0.8-3.3 2-1.4 2.4-0.4 6 1 8 0.7 1 1.5 2 2.6 2 1 0 1.4-0.7 2.7-0.7 1.2 0 1.6 0.7 2.7 0.7 1.1 0 1.8-1 2.5-2 0.8-1.1 1.1-2.2 1.1-2.3 0 0-2.1-0.8-2.1-3.1zM12.6 3.7c0.5-0.7 0.9-1.6 0.8-2.5-0.8 0-1.7 0.5-2.3 1.2-0.5 0.6-1 1.6-0.8 2.5 0.9 0.1 1.7-0.5 2.3-1.2z" fill="currentColor"/>
             </svg>
