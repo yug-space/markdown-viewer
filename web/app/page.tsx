@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import LiveDemo from "./LiveDemo";
+import InstallButton from "./InstallButton";
 
 const initialMarkdown = `# Read markdown.
 
@@ -8,16 +9,27 @@ Opens directly from your operating system.
 
 > *No accounts. No telemetry. Just your words.*
 
+## Install on Mac
+
+Paste this in **Terminal**:
+
+\`\`\`
+curl -fsSL markdown.yuggupta.com/install.sh | sh
+\`\`\`
+
+That's it. The app installs into \`/Applications\` and registers as
+the default opener for \`.md\` files. **No warnings, no fuss.**
+
 ## How it works
 
-1. **Install** the app
-2. **Double-click** any \`.md\` file
-3. That's it.
+1. **Open** any \`.md\` file from Finder, or drop one on the window
+2. **Read** it in clean, distraction-free typography
+3. **Edit** it inline — autosaves as you type
 
 ---
 
-*This page is a real markdown file.*
-**Edit the source on the left** — watch it render here, live.
+*This page is a live markdown file.*
+**Edit the source on the left** — watch it render here.
 `;
 
 export default function Home() {
@@ -26,7 +38,7 @@ export default function Home() {
 
       <header className={styles.header}>
         <a href="/" className={styles.brand}>
-          <span className={styles.brandMark}>MV</span>
+          <span className={styles.brandMark}>M</span>
           <span>Markdown Viewer</span>
         </a>
         <div className={styles.headerRight}>
@@ -43,15 +55,7 @@ export default function Home() {
             </svg>
             <span>GitHub</span>
           </a>
-          <a
-            href="https://github.com/yug-space/markdown-viewer/releases/download/v1.0.0/Markdown-Viewer-1.0.0-arm64.dmg"
-            className={styles.btnPrimary}
-          >
-            <svg width="16" height="16" viewBox="0 0 18 18" fill="currentColor" aria-hidden>
-              <path d="M14.5 9.6c0-2 1.6-2.9 1.7-3-0.9-1.4-2.4-1.5-2.9-1.6-1.2-0.1-2.4 0.7-3 0.7-0.6 0-1.6-0.7-2.6-0.7-1.4 0-2.6 0.8-3.3 2-1.4 2.4-0.4 6 1 8 0.7 1 1.5 2 2.6 2 1 0 1.4-0.7 2.7-0.7 1.2 0 1.6 0.7 2.7 0.7 1.1 0 1.8-1 2.5-2 0.8-1.1 1.1-2.2 1.1-2.3 0 0-2.1-0.8-2.1-3.1zM12.6 3.7c0.5-0.7 0.9-1.6 0.8-2.5-0.8 0-1.7 0.5-2.3 1.2-0.5 0.6-1 1.6-0.8 2.5 0.9 0.1 1.7-0.5 2.3-1.2z"/>
-            </svg>
-            <span>Download for Mac</span>
-          </a>
+          <InstallButton />
         </div>
       </header>
 
@@ -68,7 +72,11 @@ export default function Home() {
           MIT
         </a>
         <span aria-hidden>·</span>
-        <span>Also for Windows & Linux</span>
+        <a
+          href="https://github.com/yug-space/markdown-viewer/releases/download/v1.0.0/Markdown-Viewer-1.0.0-arm64.dmg"
+        >
+          .dmg direct
+        </a>
       </footer>
 
     </main>
